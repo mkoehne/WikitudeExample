@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{9517ECAF-F351-46B2-9C6B-22C3CDA5FD49}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>XamarinExample.iOS</RootNamespace>
+    <AssemblyName>XamarinExample.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IOSDebuggerPort>46886</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Wikitude.SDK">
+      <HintPath>..\Components\com.wikitude.xamarin.component-5.3.0\lib\ios-unified\Wikitude.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinExample.csproj">
+      <Project>{8DDB3159-31FD-4955-9DFE-C323630FF81C}</Project>
+      <Name>XamarinExample</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Wikitude\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ARPageRenderer.cs" />
+    <Compile Include="ExampleArchitectViewDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="com.wikitude.xamarin.component">
+      <Version>5.3.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Wikitude\ade.js" />
+    <BundleResource Include="Resources\Wikitude\target_images_examples.pdf" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_1_ImageOnTarget\js\imageontarget.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\imageTwo.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_2_MultipleTargets\js\multipletargets.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\Stone_Wall_thumb.jpg" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\pipes.wt3" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\stones.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_3_ExtendedTracking\js\extendedtracking.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\imageTwo.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\assets\wwwButton.jpg" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_4_Interactivity\js\interactivity.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\imageTwo.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\weather.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\wwwButton.jpg" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_5_HtmlDrawable\js\htmldrawable.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageSparkles.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageTwo.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\weather.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\wwwButton.jpg" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\js\sparkles.js" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\index.html" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\js\distancetotarget.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\index.html" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\austria.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\banner.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\brazil.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\france.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\germany.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\italy.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\js\basicrecognitiononclick.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\index.html" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\austria.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\banner.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\brazil.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\france.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\germany.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\italy.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\js\continuousrecognitionvsonclick.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\index.html" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\austria.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\bannerWithNameField.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\brazil.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\france.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\germany.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\italy.jpg" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\orderNowButton.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\js\usingmetainformationintheresponse.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\assets\car.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\assets\car.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\assets\tracker.wtc" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_1_3dModelOnTarget\js\3dmodelontarget.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\assets\car.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\assets\car.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\assets\tracker.wtc" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_2_AppearingAnimation\js\appearinganimation.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\assets\car.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\assets\car.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\assets\rotateButton.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\assets\tracker.wtc" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_3_Interactivity\js\interactivity.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\assets\car.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\assets\car.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\assets\rotateButton.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\assets\snapButton.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\assets\tracker.wtc" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_4_SnapToScreen\js\snaptoscreen.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\assets\car.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\assets\car_animated.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\assets\rotateButton.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\assets\tracker.wtc" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_5_AnimatedModelParts\js\imagerecognitionand3d.js" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_6_3dModelAtGeoLocation\index.html" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_6_3dModelAtGeoLocation\assets\earth.wt3" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_6_3dModelAtGeoLocation\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_6_3dModelAtGeoLocation\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\3_3dModels_6_3dModelAtGeoLocation\js\3dmodelatgeolocation.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\index.html" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_1_PoiAtLocation\js\poiatlocation.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\index.html" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_2_PoiWithLabel\js\poiwithlabel.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\index.html" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_3_MultiplePois\js\multiplepois.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\index.html" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\4_PointOfInterest_4_SelectingPois\js\selectingpois.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\index.html" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\js\fromapplicationmodel.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_1_FromApplicationModel\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\index.html" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\fromlocalresource.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\myjsondata.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\index.html" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\js\fromwebservice.js" />
+    <BundleResource Include="Resources\Wikitude\5_ObtainPoiData_3_FromWebservice\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_1_PresentingDetails\js\presentingdetails.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\assets\radar_bg.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\assets\radar_north.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\css\poi-radar.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\js\addingradar.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_2_AddingRadar\js\radar.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\assets\radar_bg.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\assets\radar_north.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\css\poi-radar.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\js\limitingrange.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_3_LimitingRange\js\radar.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\radar_bg.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\radar_north.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\css\poi-radar.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\js\radar.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_4_ReloadingContent\js\reloadingcontent.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\radar_bg.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\radar_north.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\css\poi-radar.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\nativedetailscreen.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\radar.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\index.html" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\radar_bg.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\radar_north.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\css\poi-radar.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\capturescreen.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\radar.js" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\index.html" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\assets\video.mp4" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\7_Video_1_SimpleVideo\js\simplevideo.js" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\index.html" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\assets\playButton.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\assets\video.mp4" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\7_Video_2_PlaybackStates\js\playbackstates.js" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\index.html" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\assets\playButton.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\assets\video.mp4" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\7_Video_3_SnappingVideo\js\snappingvideo.js" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\index.html" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\bike.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\transparentVideo.mp4" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\wwwButton.jpg" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\7_Video_4_Bonus-TransparentVideo\js\transparentvideo.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\index.html" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\js\frontCam.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_1_FrontCamera\js\myJsonData.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\index.html" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\js\camSwitch.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_2_CameraSwitching\js\myJsonData.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\index.html" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\marker_idle.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\marker_selected.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery-1.9.1.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery.mobile-1.3.2.min.css" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery.mobile-1.3.2.min.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\ajax-loader.gif" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-18-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-18-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-36-black.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-36-white.png" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\hwFeatures.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\marker.js" />
+    <BundleResource Include="Resources\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\myJsonData.js" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\index.html" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\js\qrandbarcode.js" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\index.html" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\assets\high_database.xml" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_2_FaceDetection\js\facedetection.js" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\index.html" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\assets\imageOne.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\assets\magazine.wtc" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\assets\surfer.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_3_CustomCamera\js\inputplugin.js" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_4_MarkerTracking\index.html" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_4_MarkerTracking\assets\car.wt3" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_4_MarkerTracking\assets\helmet.png" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_4_MarkerTracking\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\9_PluginsAPI_4_MarkerTracking\js\marker_tracking.js" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\index.html" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\ShopAd.wtc" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\ShopAdSmall.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_Deal.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_FindShops.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_GetADeal.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_Marker.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_OpenWebsite.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_color.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_1_2dTrackingAndGeo\js\2dtrackingandgeo.js" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\index.html" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Earth-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Jupiter-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Mars-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Mercury-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Neptune-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Pluto-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Saturn-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Sun-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Uranus-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Venus-icon.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\indi.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_2_SolarSystem%28Geo%29\js\solarsystemgeo.js" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\index.html" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\SolarSystem.wtc" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\backdrop.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\earth.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\jupiter.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\mars.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\mercury.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\neptune.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\pluto.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\saturn.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\solarsystem.png" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\sun.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\uranus.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\venus.wt3" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\css\default.css" />
+    <BundleResource Include="Resources\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\js\solarsystem2dtracking.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

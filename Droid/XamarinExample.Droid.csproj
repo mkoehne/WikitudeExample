@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F06C7E8-233F-41F8-8F85-B7091E352278}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinExample.Droid</RootNamespace>
+    <AssemblyName>XamarinExample.Droid</AssemblyName>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.23.3.0\lib\MonoAndroid43\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikitude.SDK">
+      <HintPath>..\Components\com.wikitude.xamarin.component-5.3.0\lib\android\Wikitude.SDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinExample.csproj">
+      <Project>{8DDB3159-31FD-4955-9DFE-C323630FF81C}</Project>
+      <Name>XamarinExample</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ARPageRenderer.cs" />
+    <Compile Include="WikitudeActivity.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="ErrorActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\layout\activity_error.xml" />
+    <AndroidResource Include="Resources\layout\activity_main.axml" />
+    <AndroidResource Include="Resources\layout\sample_cam.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="com.wikitude.xamarin.component">
+      <Version>5.3.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Wikitude\ade.js" />
+    <AndroidAsset Include="Assets\Wikitude\target_images_examples.pdf" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_1_ImageOnTarget\js\imageontarget.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\imageTwo.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_2_MultipleTargets\js\multipletargets.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\Stone_Wall_thumb.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\pipes.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\assets\stones.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_3_ExtendedTracking\js\extendedtracking.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\imageTwo.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\assets\wwwButton.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_4_Interactivity\js\interactivity.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\imageTwo.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\weather.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\assets\wwwButton.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_5_HtmlDrawable\js\htmldrawable.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageSparkles.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\imageTwo.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\weather.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\assets\wwwButton.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_6_Bonus-Sparkles\js\sparkles.js" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\1_ClientRecognition_7_Bonus-DistanceToTarget\js\distancetotarget.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\austria.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\banner.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\brazil.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\france.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\germany.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\assets\italy.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_1_BasicRecognitionOn-Click\js\basicrecognitiononclick.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\austria.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\banner.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\brazil.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\france.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\germany.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\assets\italy.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_2_ContinuousRecognitionVsOn-Click\js\continuousrecognitionvsonclick.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\austria.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\bannerWithNameField.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\brazil.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\france.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\germany.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\italy.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\assets\orderNowButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\2_CloudRecognition_3_UsingMetainformationInTheResponse\js\usingmetainformationintheresponse.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\assets\car.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\assets\car.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_1_3dModelOnTarget\js\3dmodelontarget.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\assets\car.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\assets\car.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_2_AppearingAnimation\js\appearinganimation.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\assets\car.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\assets\car.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\assets\rotateButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_3_Interactivity\js\interactivity.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\assets\car.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\assets\car.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\assets\rotateButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\assets\snapButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_4_SnapToScreen\js\snaptoscreen.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\assets\car.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\assets\car_animated.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\assets\rotateButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\assets\tracker.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_5_AnimatedModelParts\js\imagerecognitionand3d.js" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_6_3dModelAtGeoLocation\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_6_3dModelAtGeoLocation\assets\earth.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_6_3dModelAtGeoLocation\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_6_3dModelAtGeoLocation\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\3_3dModels_6_3dModelAtGeoLocation\js\3dmodelatgeolocation.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_1_PoiAtLocation\js\poiatlocation.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_2_PoiWithLabel\js\poiwithlabel.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_3_MultiplePois\js\multiplepois.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\4_PointOfInterest_4_SelectingPois\js\selectingpois.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\js\fromapplicationmodel.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_1_FromApplicationModel\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\fromlocalresource.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_2_FromLocalResource\js\myjsondata.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\js\fromwebservice.js" />
+    <AndroidAsset Include="Assets\Wikitude\5_ObtainPoiData_3_FromWebservice\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_1_PresentingDetails\js\presentingdetails.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\assets\radar_bg.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\assets\radar_north.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\css\poi-radar.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\js\addingradar.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_2_AddingRadar\js\radar.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\assets\radar_bg.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\assets\radar_north.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\css\poi-radar.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\js\limitingrange.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_3_LimitingRange\js\radar.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\radar_bg.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\assets\radar_north.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\css\poi-radar.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\js\radar.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_4_ReloadingContent\js\reloadingcontent.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\radar_bg.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\assets\radar_north.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\css\poi-radar.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\nativedetailscreen.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_5_NativeDetailScreen\js\radar.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\radar_bg.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\assets\radar_north.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\css\poi-radar.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\capturescreen.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\6_BrowsingPois_6_Bonus-CaptureScreen\js\radar.js" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\assets\video.mp4" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_1_SimpleVideo\js\simplevideo.js" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\assets\playButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\assets\video.mp4" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_2_PlaybackStates\js\playbackstates.js" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\assets\playButton.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\assets\video.mp4" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_3_SnappingVideo\js\snappingvideo.js" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\bike.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\transparentVideo.mp4" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\assets\wwwButton.jpg" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\7_Video_4_Bonus-TransparentVideo\js\transparentvideo.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\js\frontCam.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_1_FrontCamera\js\myJsonData.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\js\camSwitch.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_2_CameraSwitching\js\myJsonData.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\assets\marker_selected.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\hwFeatures.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\marker.js" />
+    <AndroidAsset Include="Assets\Wikitude\8_HardwareControl_3_AdvancedFeatures\js\myJsonData.js" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_1_QR&amp;Barcode\js\qrandbarcode.js" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\assets\high_database.xml" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_2_FaceDetection\js\facedetection.js" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\assets\imageOne.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\assets\magazine.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\assets\surfer.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_3_CustomCamera\js\inputplugin.js" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_4_MarkerTracking\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_4_MarkerTracking\assets\car.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_4_MarkerTracking\assets\helmet.png" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_4_MarkerTracking\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\9_PluginsAPI_4_MarkerTracking\js\marker_tracking.js" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\ShopAd.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\ShopAdSmall.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_Deal.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_FindShops.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_GetADeal.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_Marker.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_OpenWebsite.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\assets\YourShop_color.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_1_2dTrackingAndGeo\js\2dtrackingandgeo.js" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Earth-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Jupiter-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Mars-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Mercury-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Neptune-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Pluto-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Saturn-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Sun-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Uranus-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\Venus-icon.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\assets\indi.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_2_SolarSystem%28Geo%29\js\solarsystemgeo.js" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\index.html" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\SolarSystem.wtc" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\backdrop.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\earth.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\jupiter.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\mars.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\mercury.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\neptune.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\pluto.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\saturn.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\solarsystem.png" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\sun.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\uranus.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\assets\venus.wt3" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\css\default.css" />
+    <AndroidAsset Include="Assets\Wikitude\x_Demo_3_SolarSystem%282dTracking%29\js\solarsystem2dtracking.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>
