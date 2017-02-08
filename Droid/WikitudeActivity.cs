@@ -6,6 +6,7 @@ using Android.Util;
 using Wikitude.Architect;
 using Wikitude.Tools.Device.Features;
 using Java.IO;
+using Wikitude.Common.Camera;
 
 namespace XamarinExample.Droid
 {
@@ -27,9 +28,14 @@ namespace XamarinExample.Droid
 			worldUrl = "Wikitude" + File.Separator + Intent.GetStringExtra("id") + File.Separator + "index.html";
 
 			architectView = FindViewById<ArchitectView>(Resource.Id.architectView);
-			StartupConfiguration startupConfiguration = new StartupConfiguration(Constants.WIKITUDE_SDK_KEY, StartupConfiguration.Features.Geo);
 
-			int requiredFeatures = StartupConfiguration.Features.Tracking2D | StartupConfiguration.Features.Geo;
+			ArchitectStartupConfiguration startupConfiguration = new ArchitectStartupConfiguration();
+			startupConfiguration.setLicenseKey(Constants.WIKITUDE_SDK_KEY);
+			startupConfiguration.setFeatures(ArchitectStartupConfiguration.Features.ImageTracking);
+			startupConfiguration.setCameraResolution(CameraSettings.CameraResolution.Auto);
+
+
+			int requiredFeatures = ArchitectStartupConfiguration.Features.ImageTracking;
 			MissingDeviceFeatures missingDeviceFeatures = ArchitectView.isDeviceSupported(this, requiredFeatures);
 
 			if ((ArchitectView.getSupportedFeaturesForDevice(Application.Context) & requiredFeatures) == requiredFeatures)
@@ -112,4 +118,3 @@ namespace XamarinExample.Droid
 		}
 	}
 }
-
