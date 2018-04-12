@@ -12,4 +12,7 @@
 \.mfractor/
 \.packages/
 packages/
-Libs/
+
+Libs/ios-unified/Wikitude\.SDK\.dll
+
+Libs/android/Wikitude\.SDK\.dll
