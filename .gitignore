@@ -7,3 +7,9 @@
 /Droid/bin
 /bin
 /.droidres
+
+\.vs/
+\.mfractor/
+\.packages/
+packages/
+Libs/
